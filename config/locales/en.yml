@@ -36,10 +36,16 @@ en:
   home: "Home"
   help: "Help"
   log_in: "Log In"
+  log_out: "Log Out"
   contact: "Contact"
   about: "About"
   news: "News"
+  users_link: "Users"
+  profile_link: "Profile"
+  settings_link: "Settings"
+  account: "Account"
   form_errors: "The form contains %{errors_count} error(s)."
+  invalid_login: "Invalid email/password combination!"
   welcome_message: "Welcome to the Sample App!"
   user_not_found: "User not found!"
   footer_html: 'The
@@ -80,3 +86,9 @@ the sample app at the
       introduction: "This will be a signup page for new users."
       confirmation: "Confirmation"
       create_account: "Create my account"
+  sessions:
+    new: 
+      title: "Log in"
+      submit: "Log in"
+      new_user: "New user?"
+      sign_up: "Sign up now!"
