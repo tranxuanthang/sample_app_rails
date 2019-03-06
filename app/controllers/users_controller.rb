@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
+    @user = User.find_by id: params[:id]
+    if !@user
+      flash[:danger] = I18n.t "user_not_found"
+    end
   end
 
   def create
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = I18n.t "welcome_message"
       redirect_to @user
     else
-      render "new"
+      render :new
     end
   end
 

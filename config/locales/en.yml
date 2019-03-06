@@ -41,6 +41,7 @@ en:
   news: "News"
   form_errors: "The form contains %{errors_count} error(s)."
   welcome_message: "Welcome to the Sample App!"
+  user_not_found: "User not found!"
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
