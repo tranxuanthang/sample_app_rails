@@ -24,3 +24,11 @@ User.create! name: "Cậu Vàng",
     activated: true,
     activated_at: Time.zone.now
 end
+
+users = User.order_by_name.take 6
+content = Faker::Lorem.sentence 300
+50.times do
+  users.each do |user|
+    user.microposts.create! content: content
+  end
+end

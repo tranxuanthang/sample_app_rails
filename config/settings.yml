@@ -1,6 +1,11 @@
 max_name_length: 50
 max_email_length: 255
+max_micropost_length: 140
 min_password_length: 6
 gravatar_size: 80
 gravatar_list_size: 50
 reset_link_hours_exist: 2
+max_picture_size_megabytes: 4
+picture_width_limit: 400
+picture_height_limit: 400
+feed_items_per_page: 10
