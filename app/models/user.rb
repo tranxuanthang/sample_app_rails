@@ -2,6 +2,14 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: :Relationship,
+    foreign_key: :follower_id,
+    dependent: :destroy
+  has_many :passive_relationships, class_name: :Relationship,
+    foreign_key: :followed_id,
+    dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -70,7 +78,23 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.find_by_user id
+    Micropost.get_feed(id).or(Micropost.find_by_user(id))
+  end
+
+  def follow(other_user)
+    if !following?(other_user)
+      following << other_user
+    end
+  end
+
+  def unfollow(other_user)
+    if following?(other_user)
+      following.delete other_user
+    end
+  end
+
+  def following?(other_user)
+    following.include? other_user
   end
 
   has_secure_password

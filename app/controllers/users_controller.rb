@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
-
   def index
     @users = User.order_by_name.paginate page: params[:page]
   end
@@ -48,6 +47,20 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = I18n.t "user_not_deleted"
     end
+  end
+
+  def following
+    @title = I18n.t "following"
+    @user = User.find_by id: params[:id]
+    @users = @user.following.paginate page: params[:page]
+    render :show_follow
+  end
+
+  def followers
+    @title = I18n.t "followers"
+    @user = User.find_by id: params[:id]
+    @users = @user.followers.paginate page: params[:page]
+    render :show_follow
   end
 
   private

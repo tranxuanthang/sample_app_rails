@@ -26,9 +26,17 @@ User.create! name: "Cậu Vàng",
 end
 
 users = User.order_by_name.take 6
-content = Faker::Lorem.sentence 300
-50.times do
+content = Faker::Lorem.sentence 5
+25.times do
   users.each do |user|
     user.microposts.create! content: content
   end
 end
+
+# Following relationships
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
