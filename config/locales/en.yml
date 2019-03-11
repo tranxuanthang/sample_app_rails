@@ -52,6 +52,12 @@ en:
   user_deleted: "User deleted!"
   user_not_deleted: "User can't be deleted!"
   please_login: "Please log in."
+  please_check_email: "Please check your email to activate your account."
+  account_activation: "Account Activation"
+  account_activated: "Account activated!"
+  invalid_activation_link: "Invalid activation link"
+  account_not_activated: "Account not activated.
+Check your email for your activation link."
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
@@ -100,7 +106,6 @@ the sample app at the
       confirmation: "Confirmation"
       save_changes: "Save changes"
       change: "change"
-
   sessions:
     new:
       title: "Log in"
@@ -108,3 +113,21 @@ the sample app at the
       new_user: "New user?"
       sign_up: "Sign up now!"
       remember_me: "Remember me on this computer"
+  user_mailer:
+    account_activation:
+      text: 'Hi %{user_name},
+
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+
+%{activation_url}'
+      text_html: '<h1>Sample App</h1>
+
+<p>Hi %{user_name},</p>
+
+<p>
+Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+
+<a href="%{activation_url}">Activate</a>'
