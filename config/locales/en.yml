@@ -58,6 +58,12 @@ en:
   invalid_activation_link: "Invalid activation link"
   account_not_activated: "Account not activated.
 Check your email for your activation link."
+  password_reset_title: "Password Reset"
+  password_reset_email_sent: "Email sent with password reset instructions"
+  email_not_found: "Email address not found"
+  password_reset_expired: "Password reset has expired."
+  empty_error: "can't be empty"
+  reset_success: "Password has been reset."
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
@@ -113,21 +119,24 @@ the sample app at the
       new_user: "New user?"
       sign_up: "Sign up now!"
       remember_me: "Remember me on this computer"
+      forgot_password: "(forgot password)"
   user_mailer:
     account_activation:
-      text: 'Hi %{user_name},
-
-
-Welcome to the Sample App! Click on the link below to activate your account:
-
-
-%{activation_url}'
-      text_html: '<h1>Sample App</h1>
-
-<p>Hi %{user_name},</p>
-
-<p>
-Welcome to the Sample App! Click on the link below to activate your account:
-</p>
-
-<a href="%{activation_url}">Activate</a>'
+      title: "Sample App"
+      activate: "Activate"
+      text_1: "Hi %{user_name},"
+      text_2: "Welcome to the Sample App! Click on the link below to activate your account:"
+    password_reset:
+      title: "Password reset"
+      reset_link: "Reset password"
+      text_1: "To reset your password click the link below:"
+      text_2: "This link will expire in two hours."
+      text_3: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+  password_resets:
+    new:
+      title: "Forgot Password"
+      submit: "Submit"
+    edit:
+      title: "Password Reset"
+      update_password: "Update password"
+      confirmation: "Confirmation"

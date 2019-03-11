@@ -1,5 +1,5 @@
-<%= t ".text",
-  user_name: @user.name,
-  activation_url:
-    edit_account_activation_url(@user.activation_token, email: @user.email)
-%>
+<%= t ".text_1", user_name: @user.name %>
+
+<%= t ".text_2" %>
+
+<%= edit_account_activation_url @user.activation_token, email: @user.email %>

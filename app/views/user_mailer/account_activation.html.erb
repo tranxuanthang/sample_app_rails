@@ -1,5 +1,8 @@
-<%= t ".text_html",
-  user_name: @user.name,
-  activation_url:
-    edit_account_activation_url(@user.activation_token, email: @user.email)
-%>
+<h1><%= t ".title" %></h1>
+
+<p><%= t ".text_1", user_name: @user.name %></p>
+
+<p><%= t ".text_2" %></p>
+
+<%= link_to t(".activate"),
+  edit_account_activation_url(@user.activation_token, email: @user.email) %>
