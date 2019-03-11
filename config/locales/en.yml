@@ -87,8 +87,9 @@ the sample app at the
       confirmation: "Confirmation"
       create_account: "Create my account"
   sessions:
-    new: 
+    new:
       title: "Log in"
       submit: "Log in"
       new_user: "New user?"
       sign_up: "Sign up now!"
+      remember_me: "Remember me on this computer"
