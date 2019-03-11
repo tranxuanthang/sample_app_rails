@@ -3,13 +3,18 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token
 
-  validates :email, presence: true, length: {maximum: Settings.max_email_length},
+  validates :email, presence: true,
+    length: {maximum: Settings.max_email_length},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: Settings.min_password_length}
+  validates :password, presence: true,
+    length: {minimum: Settings.min_password_length},
+    allow_nil: true
   validates :name, presence: true, length: {maximum: Settings.max_name_length}
 
   before_save {self.email = email.downcase}
+
+  scope :order_by_name, ->{order "name ASC"}
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ?
@@ -19,6 +24,10 @@ class User < ApplicationRecord
 
   def User.new_token
     SecureRandom.urlsafe_base64
+  end
+
+  def current_user? current_user
+    self == current_user
   end
 
   def remember
