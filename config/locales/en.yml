@@ -48,6 +48,10 @@ en:
   invalid_login: "Invalid email/password combination!"
   welcome_message: "Welcome to the Sample App!"
   user_not_found: "User not found!"
+  profile_updated: "Profile updated!"
+  user_deleted: "User deleted!"
+  user_not_deleted: "User can't be deleted!"
+  please_login: "Please log in."
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
@@ -81,11 +85,22 @@ book</a>.'
 the sample app at the
 <a href="https://www.railstutorial.org/contact">contact page</a>.'
   users:
+    index:
+      title: "All users"
+    user:
+      confirm_delete: "You sure?"
     new:
       title: "Sign Up"
       introduction: "This will be a signup page for new users."
       confirmation: "Confirmation"
       create_account: "Create my account"
+    edit:
+      title: "Edit User"
+      title_heading: "Update your profile"
+      confirmation: "Confirmation"
+      save_changes: "Save changes"
+      change: "change"
+
   sessions:
     new:
       title: "Log in"
