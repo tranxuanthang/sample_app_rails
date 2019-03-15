@@ -3,3 +3,4 @@ max_email_length: 255
 min_password_length: 6
 gravatar_size: 80
 gravatar_list_size: 50
+reset_link_hours_exist: 2
