@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  has_many :microposts, dependent: :destroy
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   validates :email, presence: true,
@@ -15,7 +17,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
-  scope :order_by_name, ->{order "name ASC"}
+  scope :order_by_name, ->{order name: :asc}
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ?
@@ -65,6 +67,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.reset_link_hours_exist.hours.ago
+  end
+
+  def feed
+    Micropost.find_by_user id
   end
 
   has_secure_password

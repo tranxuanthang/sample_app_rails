@@ -63,7 +63,12 @@ Check your email for your activation link."
   email_not_found: "Email address not found"
   password_reset_expired: "Password reset has expired."
   empty_error: "can't be empty"
+  picture_too_large_error: "should be less than %{size_megabytes}MB"
+  picture_too_large_warning: "Picture size must be less than %{size_megabytes}MB. Please choose another picture."
   reset_success: "Password has been reset."
+  micropost_created: "Micropost created!"
+  micropost_deleted: "Micropost deleted!"
+  micropost_not_found: "Micropost not found."
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
@@ -75,6 +80,7 @@ by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
 sample application.'
       alt_rails_logo: "Rails Logo"
       sign_up_now: "Sign up now!"
+      micropost_feed: "Micropost Feed"
     about:
       title: "About"
       introduction_html: 'The <a href="https://www.railstutorial.org/">
@@ -112,6 +118,8 @@ the sample app at the
       confirmation: "Confirmation"
       save_changes: "Save changes"
       change: "change"
+    show:
+      micropost_list: "Micropost (%{count})"
   sessions:
     new:
       title: "Log in"
@@ -140,3 +148,15 @@ the sample app at the
       title: "Password Reset"
       update_password: "Update password"
       confirmation: "Confirmation"
+  microposts:
+    micropost:
+      posted_time_ago: "Posted %{time} ago."
+      delete_link: "delete"
+      confirm_delete: "You sure?"
+  shared:
+    user_info:
+      view_my_profile: "view my profile"
+      micropost_number: "%{count} micropost(s)"
+    micropost_form:
+      compose_new_micropost: "Compose new micropost..."
+      post_button: "Post"
