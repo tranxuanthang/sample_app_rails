@@ -69,6 +69,10 @@ Check your email for your activation link."
   micropost_created: "Micropost created!"
   micropost_deleted: "Micropost deleted!"
   micropost_not_found: "Micropost not found."
+  following: "Following"
+  followers: "Followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
   footer_html: 'The
 <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
 by <a href="http://www.michaelhartl.com/">Michael Hartl</a>'
@@ -120,6 +124,8 @@ the sample app at the
       change: "change"
     show:
       micropost_list: "Micropost (%{count})"
+    show_follow:
+      microposts: "Microposts"
   sessions:
     new:
       title: "Log in"

@@ -10,6 +10,7 @@ class Micropost < ApplicationRecord
 
   default_scope ->{order created_at: :desc}
   scope :find_by_user, ->(id){where user_id: id}
+  scope :get_feed, ->(id){where user_id: Relationship.select("followed_id").where(follower_id: id)}
 
   private
     def picture_size
